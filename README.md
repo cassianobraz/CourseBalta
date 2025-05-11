@@ -1,1 +1,1 @@
-"# CourseBalta" 
+# CourseBalta
