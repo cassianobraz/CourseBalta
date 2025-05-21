@@ -14,16 +14,16 @@ articles.Add(new Article("Artigo sobre .NET", "dotnet"));
 //}
 
 var courses = new List<Course>();
-var couseOOP = new Course("Artigo sobre OOP", "orientacao-objetos");
+var courseOOP = new Course("Artigo sobre OOP", "orientacao-objetos");
 var couseCsharp = new Course("Artigo sobre C#", "csharp");
 var couseAspNet = new Course("Artigo sobre ASP.NET", "dotnet");
-courses.Add(couseOOP);
+courses.Add(courseOOP);
 courses.Add(couseCsharp);
 courses.Add(couseAspNet);
 
 var careers = new List<Career>();
 var careerDotnet = new Career("Especialista .NET", "especialista-dotnet");
-var careerItem2 = new CareerItem(2, "Comece por OOP", "", couseOOP);
+var careerItem2 = new CareerItem(2, "Comece por OOP", "", courseOOP);
 var careerItem = new CareerItem(1, "Comece por aqui", "", couseCsharp);
 var careerItem3 = new CareerItem(3, "Comece por .NET", "", couseAspNet);
 careerDotnet.Items.Add(careerItem2);

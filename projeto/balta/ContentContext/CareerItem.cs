@@ -1,7 +1,8 @@
 ﻿namespace balta.ContentContext;
 
-public class CareerItem
+public class CareerItem : Base
 {
+    public IList<string> Notifications { get; set; }
     public CareerItem(int ordem, string title, string description, Course course)
     {
         if (course is null)
