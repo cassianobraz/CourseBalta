@@ -1,5 +1,6 @@
 ﻿using balta.ContentContext;
 using balta.ContentContext.Enums;
+using balta.SubscriptionContext;
 
 var articles = new List<Article>();
 articles.Add(new Article("Artigo sobre OOP", "orientacao-objetos"));
@@ -41,3 +42,7 @@ foreach (var career in careers)
         Console.WriteLine(item.Course.Level);
     }
 }
+
+var payPalSubscription = new PayPalSubscription();
+var student = new Student();
+student.CreateSubscription(payPalSubscription);

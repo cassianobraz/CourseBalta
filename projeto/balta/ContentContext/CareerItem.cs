@@ -1,12 +1,15 @@
-﻿namespace balta.ContentContext;
+﻿using balta.NotificationCOntext;
+using balta.SharedContext;
+
+namespace balta.ContentContext;
 
 public class CareerItem : Base
 {
     public IList<string> Notifications { get; set; }
     public CareerItem(int ordem, string title, string description, Course course)
     {
-        if (course is null)
-            throw new Exception("Course cannot be null");
+        if (course == null)
+            AddNotification(new Notification("Course", "Curso inválido."));
 
         Ordem = ordem;
         Title = title;

@@ -4,6 +4,11 @@ public abstract class Notifiable
 {
     public List<Notification> Notifications { get; set; }
 
+    protected Notifiable()
+    {
+        Notifications = new List<Notification>();
+    }
+
     public void AddNotification(Notification notification)
     {
         Notifications.Add(notification);

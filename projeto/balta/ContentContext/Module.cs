@@ -1,4 +1,6 @@
-﻿namespace balta.ContentContext;
+﻿using balta.SharedContext;
+
+namespace balta.ContentContext;
 
 public class Module : Base
 {
