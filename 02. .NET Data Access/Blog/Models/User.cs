@@ -16,5 +16,5 @@ public class User
     public string Image { get; set; } = string.Empty;
     public string Slug { get; set; } = string.Empty;
     [Write(false)]
-    public List<Role> Roles { get; set; } = [];
+    public List<Role> Roles { get; set; }
 }
