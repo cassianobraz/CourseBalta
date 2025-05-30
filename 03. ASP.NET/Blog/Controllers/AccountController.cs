@@ -13,7 +13,7 @@ namespace Blog.Controllers;
 public class AccountController : ControllerBase
 {
     [HttpPost("v1/accounts/")]
-    public async Task<IActionResult> Post([FromBody] RegisterViewModel model, [FromServices] BlogDataContext context)
+    public async Task<IActionResult> Post([FromBody] RegisterViewModel model, [FromServices] EmailService emailService, [FromServices] BlogDataContext context)
     {
         if (!ModelState.IsValid)
             return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
@@ -32,6 +32,12 @@ public class AccountController : ControllerBase
         {
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
+
+            emailService.Send(
+                user.Name,
+                user.Email,
+                subject: "Welcome my friend",
+                body: $"Sua senha é <strong>{password}</strong>");
 
             return Ok(new ResultViewModel<dynamic>(
                 new
@@ -52,8 +58,8 @@ public class AccountController : ControllerBase
 
     [HttpPost("v1/accounts/login")]
     public async Task<IActionResult> Login(
-        [FromBody] LoginViewModel model, 
-        [FromServices] BlogDataContext context, 
+        [FromBody] LoginViewModel model,
+        [FromServices] BlogDataContext context,
         [FromServices] TokenService tokenService)
     {
         if (!ModelState.IsValid)
@@ -74,7 +80,7 @@ public class AccountController : ControllerBase
         try
         {
             var token = tokenService.GenerateToken(user);
-            return Ok(new ResultViewModel<string>(token, errors:null));
+            return Ok(new ResultViewModel<string>(token, errors: null));
         }
         catch
         {
