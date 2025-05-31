@@ -24,10 +24,12 @@ public class CategoryController : ControllerBase
                 entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1);
                 return GetCategories(context);
             });
+
+            return Ok(new ResultViewModel<List<Category>>(categories));
         }
         catch
         {
-            return StatusCode(500, new ResultViewModel<List<Category>>("05XE04 - Falha interna no servidor"));
+            return StatusCode(500, new ResultViewModel<List<Category>>("05X04 - Falha interna no servidor"));
         }
     }
 
@@ -35,6 +37,7 @@ public class CategoryController : ControllerBase
     {
         return context.Categories.ToList();
     }
+
 
     [HttpGet("v1/categories/{id:int}")]
     public async Task<IActionResult> GetByIdsync(
