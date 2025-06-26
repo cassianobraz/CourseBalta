@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtmBuilder.Core", "UtmBuilder.Core\UtmBuilder.Core.csproj", "{06A41432-3F25-47A8-9FD8-C79C2F874CC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtmBuilder.Core.Tests", "UtmBuilder.Core.Tests\UtmBuilder.Core.Tests.csproj", "{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{06A41432-3F25-47A8-9FD8-C79C2F874CC1}.Release|x64.Build.0 = Release|Any CPU
 		{06A41432-3F25-47A8-9FD8-C79C2F874CC1}.Release|x86.ActiveCfg = Release|Any CPU
 		{06A41432-3F25-47A8-9FD8-C79C2F874CC1}.Release|x86.Build.0 = Release|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Debug|x64.Build.0 = Debug|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Debug|x86.Build.0 = Debug|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Release|x64.ActiveCfg = Release|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Release|x64.Build.0 = Release|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Release|x86.ActiveCfg = Release|Any CPU
+		{AB0E3CFB-FB8B-40A7-8142-AB143C58121B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

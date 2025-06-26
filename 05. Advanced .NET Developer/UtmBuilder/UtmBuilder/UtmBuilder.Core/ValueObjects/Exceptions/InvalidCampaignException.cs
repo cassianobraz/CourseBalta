@@ -6,21 +6,16 @@ public partial class InvalidCampaignException : Exception
 {
     private const string DefaultErrorMessage = "Invalid UTM parameters";
 
-    public InvalidCampaignException(string message = DefaultErrorMessage)
-        : base(message)
+    public InvalidCampaignException(
+        string message = DefaultErrorMessage) : base(message)
     {
-
     }
 
-    public static void ThrowIfNull(string address, string message = DefaultErrorMessage)
+    public static void ThrowIfNull(
+        string? item,
+        string message = DefaultErrorMessage)
     {
-        if (string.IsNullOrWhiteSpace(address))
-            throw new InvalidUrlException(message);
-
-        if (!UrlRegex().IsMatch(address))
-            throw new InvalidUrlException();
+        if (string.IsNullOrEmpty(item))
+            throw new InvalidCampaignException(message);
     }
-
-    [GeneratedRegex(@"^https?:\/\/[^\s/$.?#].[^\s]*$")]
-    private static partial Regex UrlRegex();
 }
