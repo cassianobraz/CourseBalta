@@ -5,7 +5,7 @@ using Microsoft.Data.SqlClient;
 
 namespace DependencyStore.Repositories;
 
-public class PromoCodeRepository : IPromocodeRepository
+public class PromoCodeRepository : IPromoCodeRepository
 {
     private readonly SqlConnection _connection;
     public PromoCodeRepository(SqlConnection connection)

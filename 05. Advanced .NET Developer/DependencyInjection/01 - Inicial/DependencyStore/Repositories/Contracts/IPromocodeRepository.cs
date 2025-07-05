@@ -2,7 +2,7 @@
 
 namespace DependencyStore.Repositories.Contracts;
 
-public interface IPromocodeRepository
+public interface IPromoCodeRepository
 {
     Task<PromoCode?> GetPromoCodeAsync(string promoCode);
 }
