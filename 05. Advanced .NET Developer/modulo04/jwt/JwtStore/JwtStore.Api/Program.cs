@@ -8,6 +8,12 @@ builder.AddJwtAuthentication();
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapGet("/", () => "Hello world");
 
 app.Run();
