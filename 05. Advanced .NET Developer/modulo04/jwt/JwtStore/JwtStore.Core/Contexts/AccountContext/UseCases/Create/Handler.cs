@@ -2,10 +2,11 @@
 using JwtStore.Core.Contexts.AccountContext.Entities;
 using JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts;
 using JwtStore.Core.Contexts.AccountContext.ValueObjects;
+using MediatR;
 
 namespace JwtStore.Core.Contexts.AccountContext.UseCases.Create;
 
-public class Handler
+public class Handler : IRequestHandler<Request, Response>
 {
     private readonly IRepository _repository;
     private readonly IService _service;
@@ -15,7 +16,7 @@ public class Handler
         _repository = repository;
         _service = service;
     }
-    public async Task<Response> Handler(Request request, CancellationToken cancellationToken)
+    public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
     {
         #region 01. Valida a requisição
         try
