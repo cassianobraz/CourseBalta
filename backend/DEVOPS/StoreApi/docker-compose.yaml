@@ -1,0 +1,37 @@
+name: encontro-premium
+
+services:
+  store-api:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: store-api
+    ports:
+        - "5001:80"
+    depends_on:
+        - sql-server
+    environment:
+        - ASPNETCORE_URLS=http://+:80
+        - ConnectionStrings__DefaultConnection=Server=sql-server;Database=EncontroPremiumDb
+    networks:
+        - backend
+
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    container_name: sqlserver
+    environment:
+        - SA_PASSWORD=value
+        - ACCEPT_EULA=Y
+    ports:
+        - "1433:1433"
+    volumes:
+        - sql_data:/var/opt/mssql
+    networks:
+        - backend
+
+  volumes:
+    sql_data:  
+  
+  networks:
+    backend:
+    
